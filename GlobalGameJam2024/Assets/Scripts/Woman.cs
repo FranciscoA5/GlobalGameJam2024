@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class Woman : Character
 {
-    [SerializeField] private Transform center;
     [SerializeField] private float screamRange;
-
 
     public int circleSegments = 30;
 
@@ -32,38 +30,16 @@ public class Woman : Character
 
     public void Scream()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(center.transform.position, screamRange);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transf.position, screamRange);
         for (int i = 0; i < colliders.Length; i++)
         {
-            if (colliders[i].gameObject.tag == "Fat")
+            if (colliders[i].gameObject.TryGetComponent<Guy>(out Guy guy))
             {
-                // Código para Fat
+                guy.SwitchState(State.Active);
             }
-
-            if (colliders[i].gameObject.tag == "Guy")
+            else if (colliders[i].gameObject.TryGetComponent<Character>(out Character charac))
             {
-                Character guyCharacter = colliders[i].gameObject.GetComponent<Character>();
-                guyCharacter.SwitchState(State.Active);
-            }
-
-            if (colliders[i].gameObject.tag == "Woman")
-            {
-                // Código para Woman
-            }
-
-            if (colliders[i].gameObject.tag == "Old")
-            {
-                // Código para character geral
-            }
-
-            if (colliders[i].gameObject.tag == "Drunk")
-            {
-                // Código para character geral
-            }
-
-            if (colliders[i].gameObject.tag == "Chick")
-            {
-                // Código para character geral
+                //Código 
             }
         }
     }
@@ -71,7 +47,7 @@ public class Woman : Character
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(center.transform.position, screamRange);
+        Gizmos.DrawWireSphere(transf.position, screamRange);
 
         // Draw a circle to visualize the attack range
         float angleStep = 360f / circleSegments;
@@ -79,7 +55,7 @@ public class Woman : Character
         for (int i = 0; i <= circleSegments; i++)
         {
             float angle = Mathf.Deg2Rad * i * angleStep;
-            Vector3 newPos = center.transform.position + new Vector3(Mathf.Cos(angle) * screamRange, Mathf.Sin(angle) * screamRange, 0f);
+            Vector3 newPos = transf.position + new Vector3(Mathf.Cos(angle) * screamRange, Mathf.Sin(angle) * screamRange, 0f);
             if (i > 0)
             {
                 Gizmos.DrawLine(prevPos, newPos);

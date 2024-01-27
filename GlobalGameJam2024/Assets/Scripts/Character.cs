@@ -6,6 +6,7 @@ public abstract class Character : MonoBehaviour
 {
     protected Rigidbody2D rb2d;
     protected Animator anim;
+    protected Transform transf;
 
     public enum State
     {
@@ -32,6 +33,7 @@ public abstract class Character : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
+        transf = transform;
     }
 
     private void Update()
