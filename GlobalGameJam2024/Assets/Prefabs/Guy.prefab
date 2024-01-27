@@ -7,6 +7,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1492137167022159364, guid: 2b2afe8269f414b4da7fa42b1b5c057e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2079955576, guid: f1eff18b1f6797643acb98992761bfcd, type: 3}
+    - target: {fileID: 1698340765594544961, guid: 2b2afe8269f414b4da7fa42b1b5c057e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 700101883, guid: f1eff18b1f6797643acb98992761bfcd, type: 3}
+    - target: {fileID: 2213386889333436114, guid: 2b2afe8269f414b4da7fa42b1b5c057e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2095702422, guid: f1eff18b1f6797643acb98992761bfcd, type: 3}
+    - target: {fileID: 2539339996768321867, guid: 2b2afe8269f414b4da7fa42b1b5c057e, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 93af401db93a59e47aec2347b0db2272, type: 2}
+    - target: {fileID: 2605232082905715984, guid: 2b2afe8269f414b4da7fa42b1b5c057e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -950336151, guid: f1eff18b1f6797643acb98992761bfcd, type: 3}
+    - target: {fileID: 3829095879116869931, guid: 2b2afe8269f414b4da7fa42b1b5c057e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1941098744, guid: f1eff18b1f6797643acb98992761bfcd, type: 3}
     - target: {fileID: 4297793078261537198, guid: 2b2afe8269f414b4da7fa42b1b5c057e, type: 3}
       propertyPath: m_Name
       value: Guy
