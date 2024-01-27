@@ -10,6 +10,8 @@ public class CharacterSpawning : MonoBehaviour
     [SerializeField] private GameObject[] characters = new GameObject[6];
     [SerializeField] private GameObject[] buttons = new GameObject[6];
 
+   
+    
     void Start()
     {
         for (int i = 0; i < 6; i++)
@@ -17,7 +19,7 @@ public class CharacterSpawning : MonoBehaviour
             characterSelected[i] = false;
         }
 
-        
+      
     }
 
     // Update is called once per frame
@@ -85,9 +87,15 @@ public class CharacterSpawning : MonoBehaviour
                 {
                     Instantiate(characters[i], mousePosition, transform.rotation);
                     resetSelectionFalse();
+
+                    GameObject playerManagerObject = GameObject.Find("PlayerManager");
+                    PlayerManager playerManager = playerManagerObject.GetComponent<PlayerManager>();
+
+                    playerManager.decreasePlayerMoney(i);
+
                 }
-                
-                
+
+
             }
         }
     }
