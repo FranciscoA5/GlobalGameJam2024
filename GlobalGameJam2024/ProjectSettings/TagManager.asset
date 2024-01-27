@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Guy
   - Woman
+  - Fat
+  - Drunk
+  - Chicken
+  - Old
   layers:
   - Default
   - TransparentFX
