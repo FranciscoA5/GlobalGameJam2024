@@ -34,8 +34,15 @@ public class Woman : Character
     }
 
     public override void Active()
+<<<<<<< HEAD
     { 
         Scream();
+=======
+    {
+        //Scream();
+        Scream();
+        
+>>>>>>> Gil-reactions
     }
 
     public override void Reactive()
@@ -86,6 +93,7 @@ public class Woman : Character
         }
     }
 
+<<<<<<< HEAD
     //private void OnDrawGizmos()
     //{
     //    Gizmos.color = Color.yellow;
@@ -105,4 +113,25 @@ public class Woman : Character
     //        prevPos = newPos;
     //    }
     //}
+=======
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, screamRange);
+
+        // Draw a circle to visualize the attack range
+        float angleStep = 360f / circleSegments;
+        Vector3 prevPos = Vector3.zero;
+        for (int i = 0; i <= circleSegments; i++)
+        {
+            float angle = Mathf.Deg2Rad * i * angleStep;
+            Vector3 newPos = transform.position + new Vector3(Mathf.Cos(angle) * screamRange, Mathf.Sin(angle) * screamRange, 0f);
+            if (i > 0)
+            {
+                Gizmos.DrawLine(prevPos, newPos);
+            }
+            prevPos = newPos;
+        }
+    }
+>>>>>>> Gil-reactions
 }

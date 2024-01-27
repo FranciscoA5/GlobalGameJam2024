@@ -7,8 +7,13 @@ TagManager:
   - Guy
   - Woman
   - Chicken
+<<<<<<< HEAD
   - Fat
   - Drunk
+=======
+  - Drunk
+  - Fat
+>>>>>>> Gil-reactions
   - Old
   layers:
   - Default
@@ -17,12 +22,12 @@ TagManager:
   - Character
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Chicken
+  - Guy
+  - Drunk
+  - Fat
+  - Women
+  - Old
   - 
   - 
   - 
