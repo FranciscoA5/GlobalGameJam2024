@@ -6,7 +6,7 @@ public class Guy : Character
 {
     public override void Idle()
     {
-
+        Walk();
     }
 
     public override void Dead()
