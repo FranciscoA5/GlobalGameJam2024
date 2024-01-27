@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Guy
   - Woman
+  - Chicken
+  - Drunk
+  - Fat
+  - Old
   layers:
   - Default
   - TransparentFX
@@ -13,12 +17,12 @@ TagManager:
   - Character
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Chicken
+  - Guy
+  - Drunk
+  - Fat
+  - Women
+  - Old
   - 
   - 
   - 

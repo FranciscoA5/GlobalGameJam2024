@@ -318,9 +318,9 @@ GameObject:
   - component: {fileID: 662891399505785364}
   - component: {fileID: 1489744455382228417}
   - component: {fileID: 8679725122077432363}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: Fat
-  m_TagString: Woman
+  m_TagString: Fat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
