@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Character : MonoBehaviour
 {
     protected Rigidbody2D rb2d;
+    protected Animator anim;
 
     public enum State
     {
@@ -30,6 +31,7 @@ public abstract class Character : MonoBehaviour
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -48,7 +50,7 @@ public abstract class Character : MonoBehaviour
         }
     }
 
-    protected void SwitchState(State newState)
+    public void SwitchState(State newState)
     {
         currState = newState;
     }
@@ -65,15 +67,23 @@ public abstract class Character : MonoBehaviour
                     rb2d.velocity = Vector3.zero;
                     break;
                 case 1:
-                    rb2d.velocity = new Vector3(2, 0, 0);
+                    rb2d.velocity = new Vector3(1, 0, 0);
                     break;
                 case 2:
-                    rb2d.velocity = new Vector3(-2, 0, 0);
+                    rb2d.velocity = new Vector3(-1, 0, 0);
                     break;
             }
-
             walkTimer = 0;
         }
         walkTimer += Time.deltaTime;
+
+        if (rb2d.velocity.x > 0 || rb2d.velocity.x < 0)
+        {
+            anim.SetBool("isWalking", true);
+        }
+        else
+        {
+            anim.SetBool("isWalking", false);
+        }
     }
 }
