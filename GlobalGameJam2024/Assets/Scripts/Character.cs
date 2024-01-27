@@ -85,6 +85,9 @@ public abstract class Character : MonoBehaviour
             case State.Active:
                 Active();
                 break;
+            case State.Reactive:
+                Reactive();
+                break;
         }
     }
 

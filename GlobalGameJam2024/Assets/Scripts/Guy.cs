@@ -13,7 +13,10 @@ public class Guy : Character
 
     public override void Idle()
     {
-        Walk();
+        if (Input.GetKey(KeyCode.A))
+        {
+            SwitchState(State.Active);
+        }
     }
 
     public override void Dead()

@@ -33,6 +33,11 @@ public class Woman : Character
         Cry();
     }
 
+    public override void Reactive()
+    {
+        
+    }
+
     public void Scream()
     {
         anim.SetBool("isScreaming", true);
@@ -49,7 +54,7 @@ public class Woman : Character
             }
             else if (colliders[i].gameObject.TryGetComponent<Character>(out Character charac))
             {
-                //Código 
+                //Cï¿½digo 
                 Debug.Log("deteta character");
             }
         }
@@ -70,7 +75,7 @@ public class Woman : Character
             }
             else if (colliders[i].gameObject.TryGetComponent<Character>(out Character charac))
             {
-                //Código 
+                //Cï¿½digo 
                 Debug.Log("deteta character");
             }
         }
