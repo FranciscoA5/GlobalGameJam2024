@@ -28,7 +28,10 @@ public class GuyStateMachine : MonoBehaviour
 
         public override void OnUpdate()
         {
-
+            if (Input.GetKey(KeyCode.A)) 
+            {
+                characterStateMachine.SwitchState(characterStateMachine.activeState);
+            }
         }
 
         public override void OnExit()
@@ -60,6 +63,7 @@ public class GuyStateMachine : MonoBehaviour
             {
                 // Move the GameObject to the left
                 MoveLeft();
+                Debug.Log("Move to the left");
             }
             else
             {

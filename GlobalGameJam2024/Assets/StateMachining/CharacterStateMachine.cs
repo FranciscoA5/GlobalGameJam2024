@@ -19,11 +19,20 @@ public class CharacterStateMachine : MonoBehaviour
         activeState = new ActiveState(this);
         reactiveState = new ReactiveState(this);
         deadState = new DeadState(this);
+
+        // Set an initial state
+        currentState = idleState;
+        currentStateName = $"{currentState}";
+        currentState.OnEnter();
     }
 
     private void Update()
     {
-        currentState.OnUpdate();
+        // Check if currentState is not null before calling OnUpdate
+        if (currentState != null)
+        {
+            currentState.OnUpdate();
+        }
     }
 
     public void SwitchState(CharacterState newState)
