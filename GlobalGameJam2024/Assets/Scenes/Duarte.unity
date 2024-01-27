@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 393335664}
   - component: {fileID: 393335663}
   m_Layer: 5
-  m_Name: Guy
+  m_Name: GuyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -566,7 +566,7 @@ GameObject:
   - component: {fileID: 494137207}
   - component: {fileID: 494137206}
   m_Layer: 5
-  m_Name: Chicken
+  m_Name: ChickenButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -835,7 +835,7 @@ GameObject:
   - component: {fileID: 853494130}
   - component: {fileID: 853494129}
   m_Layer: 5
-  m_Name: Woman
+  m_Name: WomanButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1101,7 +1101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 905746267}
   m_Layer: 5
-  m_Name: Characters
+  m_Name: CharacterButtons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1146,7 +1146,7 @@ GameObject:
   - component: {fileID: 1091756975}
   - component: {fileID: 1091756974}
   m_Layer: 5
-  m_Name: FatMan
+  m_Name: FatManButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1280,7 +1280,7 @@ GameObject:
   - component: {fileID: 1114143672}
   - component: {fileID: 1114143671}
   m_Layer: 5
-  m_Name: OldMan
+  m_Name: OldManButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2059,20 +2059,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterSelected: 000000000000
-  characters:
-  - {fileID: 6155500975492425951, guid: 647ff8ffcfb4f0c4591fec185befe837, type: 3}
-  - {fileID: 6576407065306750462, guid: 65191ede075024947ad4640bd0d4d420, type: 3}
-  - {fileID: 3696807793671926070, guid: 7bc1f497e674cff4aa596c8750cd9704, type: 3}
-  - {fileID: 7618217134615214411, guid: 90d0cbff0e13f7e469cb95fdc0a808bb, type: 3}
-  - {fileID: 7660747653404862095, guid: 86bfa700f4ff7724193e0bd899301515, type: 3}
-  - {fileID: 5955598022249417133, guid: c283a7de8fdbd2f4a8d99a935eae2152, type: 3}
-  buttons:
-  - {fileID: 853494127}
-  - {fileID: 1091756972}
-  - {fileID: 393335661}
-  - {fileID: 1463429724}
-  - {fileID: 494137204}
-  - {fileID: 1114143669}
+  charactersPrefabs:
+  - {fileID: 8338436937150524163, guid: 4a57dff39ba9bfe4597ce4fb7b8fd5a6, type: 3}
+  - {fileID: 397435165139689443, guid: 512482e974887b94f9f347ad9798e62f, type: 3}
+  - {fileID: 397435165139689443, guid: 512482e974887b94f9f347ad9798e62f, type: 3}
+  - {fileID: 397435165139689443, guid: 512482e974887b94f9f347ad9798e62f, type: 3}
+  - {fileID: 397435165139689443, guid: 512482e974887b94f9f347ad9798e62f, type: 3}
+  - {fileID: 397435165139689443, guid: 512482e974887b94f9f347ad9798e62f, type: 3}
+  characterList: []
 --- !u!1 &1362282135
 GameObject:
   m_ObjectHideFlags: 0
@@ -2139,7 +2133,7 @@ GameObject:
   - component: {fileID: 1463429727}
   - component: {fileID: 1463429726}
   m_Layer: 5
-  m_Name: DrunkMan
+  m_Name: DrunkManButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2272,8 +2266,9 @@ GameObject:
   - component: {fileID: 1474558093}
   - component: {fileID: 1474558092}
   - component: {fileID: 1474558091}
+  - component: {fileID: 1474558094}
   m_Layer: 5
-  m_Name: Punchline
+  m_Name: PunchlineButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2343,7 +2338,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1474558092}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1474558094}
+        m_TargetAssemblyTypeName: PunchlineButton, Assembly-CSharp
+        m_MethodName: buttonClickin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1474558092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2382,6 +2389,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1474558089}
   m_CullTransparentMesh: 1
+--- !u!114 &1474558094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474558089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76e8162116f625408d446132720a590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1548729562
 GameObject:
   m_ObjectHideFlags: 0
