@@ -44,9 +44,4 @@ public class Drunk : Character
     {
         anim.SetTrigger("DrunkDance");
     }
-
-    public override void Reactive()
-    {
-        
-    }
 }
