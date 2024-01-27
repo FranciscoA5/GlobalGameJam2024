@@ -50,7 +50,7 @@ public abstract class Character : MonoBehaviour
         }
     }
 
-    protected void SwitchState(State newState)
+    public void SwitchState(State newState)
     {
         currState = newState;
     }
