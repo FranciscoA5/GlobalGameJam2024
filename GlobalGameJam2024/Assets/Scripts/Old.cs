@@ -53,7 +53,7 @@ public class Old : Character
 
     public override void Reactive()
     {
-
+        
     }
 
     private void ThrowCane()
