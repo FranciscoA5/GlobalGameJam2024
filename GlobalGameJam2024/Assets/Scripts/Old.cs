@@ -43,6 +43,11 @@ public class Old : Character
         ThrowCane();
     }
 
+    public override void Reactive()
+    {
+        
+    }
+
     private void ThrowCane()
     {
         if (hasCane)

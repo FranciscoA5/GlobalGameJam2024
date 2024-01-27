@@ -9,6 +9,11 @@ public class Chicken : Character
         
     }
 
+    public override void Reactive()
+    {
+        
+    }
+
     public override void Dead()
     {
      
