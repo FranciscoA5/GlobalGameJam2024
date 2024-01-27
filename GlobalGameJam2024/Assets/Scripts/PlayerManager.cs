@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
-    private int playerMoney = 100;
+    private int playerMoney = 1000;
     public TextMeshProUGUI playerMoneyDisplay;
 
     //preço que cada character custa

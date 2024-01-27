@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: -1064013381936217247}
   m_Layer: 3
   m_Name: Fat
-  m_TagString: Woman
+  m_TagString: Fat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -390,7 +390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c706b4348f5ff9541beeb3be3614f4be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screamRange: 3.5
+  screamRange: 5.76
   circleSegments: 30
 --- !u!1 &6207608293050932865
 GameObject:

@@ -169,6 +169,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Old
       objectReference: {fileID: 0}
+    - target: {fileID: 4297793078261537198, guid: 2b2afe8269f414b4da7fa42b1b5c057e, type: 3}
+      propertyPath: m_TagString
+      value: Old
+      objectReference: {fileID: 0}
     - target: {fileID: 4297793078261537201, guid: 2b2afe8269f414b4da7fa42b1b5c057e, type: 3}
       propertyPath: m_RootOrder
       value: 0

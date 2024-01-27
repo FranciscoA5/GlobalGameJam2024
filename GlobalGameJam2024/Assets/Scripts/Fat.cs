@@ -18,6 +18,11 @@ public class Fat : Character
     }
     public override void Active()
     {
+        chaseFood();
+    }
+
+    public override void Reactive()
+    {
 
     }
 
@@ -36,16 +41,26 @@ public class Fat : Character
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transf.position, screamRange);
         for (int i = 0; i < colliders.Length; i++)
         {
-            if (colliders[i].gameObject.TryGetComponent<Guy>(out Guy guy))
+            if (colliders[i].gameObject.CompareTag("Chicken"))
             {
-                Debug.Log("Deteta Guy");
-                guy.GetCharacterPosition(transform.position.x);
-                guy.SwitchState(State.Active);
-            }
-            else if (colliders[i].gameObject.TryGetComponent<Character>(out Character charac))
-            {
-                //Código 
-                Debug.Log("deteta character");
+            
+                if (colliders[i].gameObject.transform.position.x  < transform.position.x)
+                {
+                    anim.SetBool("isWalking", true);
+                    rb2d.velocity = new Vector3(-2, 0, 0);
+                    return;
+                }
+                else if (colliders[i].gameObject.transform.position.x  > transform.position.x)
+                {
+                    anim.SetBool("isWalking", true);
+                    rb2d.velocity = new Vector3(2, 0, 0);
+                }
+                else
+                {
+                    anim.SetBool("isWalking", false);
+                    rb2d.velocity = new Vector2(0, 0);
+                }
+                
             }
         }
     }
@@ -69,5 +84,26 @@ public class Fat : Character
             prevPos = newPos;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag != "Chicken")
+        {
+
+           
+            Vector2 forceDirection = new Vector2(70, 70);
+            collision.rigidbody.AddForce(forceDirection, ForceMode2D.Impulse);
+
+            
+
+        }
+        else
+        {
+            Destroy(collision.gameObject);
+        }
+
+    }
+    
+
 
 }
