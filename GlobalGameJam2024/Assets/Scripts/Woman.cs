@@ -24,22 +24,47 @@ public class Woman : Character
     }
 
     public override void Active()
-    {
-        Scream();
+    { 
+        //Scream();
+        Cry();
     }
 
     public void Scream()
     {
+        anim.SetBool("isScreaming", true);
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transf.position, screamRange);
         for (int i = 0; i < colliders.Length; i++)
         {
             if (colliders[i].gameObject.TryGetComponent<Guy>(out Guy guy))
             {
+                Debug.Log("Deteta Guy");
+                guy.GetCharacterPosition(transform.position.x);
                 guy.SwitchState(State.Active);
             }
             else if (colliders[i].gameObject.TryGetComponent<Character>(out Character charac))
             {
                 //Código 
+                Debug.Log("deteta character");
+            }
+        }
+    }
+
+    public void Cry()
+    {
+        anim.SetBool("isCrying", true);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transf.position, screamRange);
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            if (colliders[i].gameObject.TryGetComponent<Guy>(out Guy guy))
+            {
+                Debug.Log("Deteta Guy");
+                guy.GetCharacterPosition(transform.position.x);
+                guy.SwitchState(State.Active);
+            }
+            else if (colliders[i].gameObject.TryGetComponent<Character>(out Character charac))
+            {
+                //Código 
+                Debug.Log("deteta character");
             }
         }
     }
