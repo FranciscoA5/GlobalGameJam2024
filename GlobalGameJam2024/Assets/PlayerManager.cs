@@ -9,7 +9,11 @@ public class PlayerManager : MonoBehaviour
 {
     private int playerMoney = 100;
     public TextMeshProUGUI playerMoneyDisplay;
+
+    //preço que cada character custa
     [SerializeField] private int[] charactersMoney = new int[6];
+
+    //botoes das characters
     [SerializeField] private Button[] buttons = new Button[6];
 
 
@@ -36,6 +40,7 @@ public class PlayerManager : MonoBehaviour
             playerMoney = 0;
         }
 
+        //se o character custar mais dinheiro que o player tem , desativa esse botao
         for (int i = 0; i < 6; i++)
         {
             if (charactersMoney[i] > playerMoney)

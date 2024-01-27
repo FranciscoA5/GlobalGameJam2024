@@ -6,14 +6,17 @@ using UnityEngine;
 
 public class CharacterSpawning : MonoBehaviour
 {
+    //usados para as funcoes dos botoes
     [SerializeField] private bool[] characterSelected = new bool[6];
+
+    //prefabs a serem instanciados
     [SerializeField] private GameObject[] characters = new GameObject[6];
-    [SerializeField] private GameObject[] buttons = new GameObject[6];
+    
 
    
-    
     void Start()
     {
+        //o jogo começa com todos os botoes a serem falsos
         for (int i = 0; i < 6; i++)
         {
             characterSelected[i] = false;
