@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class Character : MonoBehaviour
 {
+    protected Rigidbody2D rb2d;
+
     public enum State
     {
         Idle,
@@ -25,6 +27,10 @@ public abstract class Character : MonoBehaviour
 
     public abstract void Active();
 
+    private void Start()
+    {
+        rb2d = GetComponent<Rigidbody2D>();
+    }
 
     private void Update()
     {
@@ -45,5 +51,29 @@ public abstract class Character : MonoBehaviour
     protected void SwitchState(State newState)
     {
         currState = newState;
+    }
+
+    protected float walkTimer = 0;
+    protected void Walk()
+    {
+        if (walkTimer >= 2f)
+        {
+            int walkState = Random.Range(0, 3);
+            switch (walkState)
+            {
+                case 0:
+                    rb2d.velocity = Vector3.zero;
+                    break;
+                case 1:
+                    rb2d.velocity = new Vector3(2, 0, 0);
+                    break;
+                case 2:
+                    rb2d.velocity = new Vector3(-2, 0, 0);
+                    break;
+            }
+
+            walkTimer = 0;
+        }
+        walkTimer += Time.deltaTime;
     }
 }
