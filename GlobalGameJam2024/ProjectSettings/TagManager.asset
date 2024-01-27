@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Guy
   - Woman
+  - Chicken
   layers:
   - Default
   - TransparentFX

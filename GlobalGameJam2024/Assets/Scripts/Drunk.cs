@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class Drunk : Character
 {
+
+    private void OnMouseDown()
+    {
+        SwitchToIdleState(); // This line ensures that the previously first character goes back to idle state
+
+        // Change the state of the clicked woman to active
+        SwitchState(State.First);
+
+
+    }
     public override void Active()
     {
         Walk();

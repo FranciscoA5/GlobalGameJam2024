@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Woman : Character
+public class Fat : Character
 {
     [SerializeField] private float screamRange;
-
     public int circleSegments = 30;
 
     private void OnMouseDown()
@@ -17,15 +16,9 @@ public class Woman : Character
 
 
     }
-
-    public override void Idle()
+    public override void Active()
     {
-        Walk();
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            SwitchState(State.Active);
-        }
     }
 
     public override void Dead()
@@ -33,35 +26,13 @@ public class Woman : Character
 
     }
 
-    public override void Active()
-    { 
-        //Scream();
-        Cry();
+    public override void Idle()
+    {
+
     }
 
-    public void Scream()
+    public void chaseFood()
     {
-        anim.SetBool("isScreaming", true);
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transf.position, screamRange);
-        for (int i = 0; i < colliders.Length; i++)
-        {
-            if (colliders[i].gameObject.TryGetComponent<Guy>(out Guy guy))
-            {
-                Debug.Log("Deteta Guy");
-                guy.GetCharacterPosition(transform.position.x);
-                guy.SwitchState(State.Active);
-            }
-            else if (colliders[i].gameObject.TryGetComponent<Character>(out Character charac))
-            {
-                //Código 
-                Debug.Log("deteta character");
-            }
-        }
-    }
-
-    public void Cry()
-    {
-        anim.SetBool("isCrying", true);
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transf.position, screamRange);
         for (int i = 0; i < colliders.Length; i++)
         {
@@ -98,4 +69,5 @@ public class Woman : Character
             prevPos = newPos;
         }
     }
+
 }
