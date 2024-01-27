@@ -16,6 +16,6 @@ public class Guy : Character
 
     public override void Active()
     {
-        Debug.Log("Guy is Active");
+
     }
 }
