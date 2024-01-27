@@ -7,12 +7,15 @@ public abstract class Character : MonoBehaviour
     protected Rigidbody2D rb2d;
     protected Animator anim;
     protected Transform transf;
+    protected int characterClicked = 0;
+    private SpriteRenderer spriteRenderer;
 
     public enum State
     {
         Idle,
         Dead,
-        Active
+        Active,
+        First
     }
 
     protected Character(State startingState = State.Idle)
@@ -29,11 +32,40 @@ public abstract class Character : MonoBehaviour
 
     public abstract void Active();
 
+    public State GetCharacterState()
+    {
+        return currState;
+    }
+
+    private static Character currentFirstCharacter; // Static variable to keep track of the currently first character
+
+    protected void SetCurrentFirstCharacter(Character newFirstCharacter)
+    {
+        // Set the new active character
+        currentFirstCharacter = newFirstCharacter;
+        spriteRenderer.color = Color.red;
+    }
+
+    protected void SwitchToIdleState()
+    {
+        // Switch the current first character to idle state
+        if (currentFirstCharacter != null && currentFirstCharacter != this)
+        {
+            
+            currentFirstCharacter.SwitchState(State.Idle);
+            
+        }
+
+        // Set the current character as the new active character
+        SetCurrentFirstCharacter(this);
+    }
+
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
         transf = transform;
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void Update()
@@ -41,6 +73,7 @@ public abstract class Character : MonoBehaviour
         switch (currState)
         {
             case State.Idle:
+                spriteRenderer.color = Color.white;
                 Idle();
                 break;
             case State.Dead:
@@ -88,4 +121,6 @@ public abstract class Character : MonoBehaviour
             anim.SetBool("isWalking", false);
         }
     }
+
+  
 }

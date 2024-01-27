@@ -5,8 +5,19 @@ using UnityEngine;
 public class Woman : Character
 {
     [SerializeField] private float screamRange;
+    
 
     public int circleSegments = 30;
+
+    private void OnMouseDown()
+    {
+        SwitchToIdleState(); // This line ensures that the previously first character goes back to idle state
+
+        // Change the state of the clicked woman to active
+        SwitchState(State.First);
+        
+    }
+
 
     public override void Idle()
     {
@@ -25,6 +36,7 @@ public class Woman : Character
 
     public override void Active()
     {
+        Debug.Log("WOMAN ACTIVE");
         Scream();
     }
 

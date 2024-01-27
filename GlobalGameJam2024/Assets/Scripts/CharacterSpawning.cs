@@ -10,10 +10,10 @@ public class CharacterSpawning : MonoBehaviour
     [SerializeField] private bool[] characterSelected = new bool[6];
 
     //prefabs a serem instanciados
-    [SerializeField] private GameObject[] characters = new GameObject[6];
-    
+    [SerializeField] private GameObject[] charactersPrefabs = new GameObject[6];
 
-   
+    public List<GameObject> characterList;
+
     void Start()
     {
         //o jogo começa com todos os botoes a serem falsos
@@ -88,7 +88,8 @@ public class CharacterSpawning : MonoBehaviour
                 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, 10f));
                 if(mousePosition.x > -6)
                 {
-                    Instantiate(characters[i], mousePosition, transform.rotation);
+                    GameObject character = Instantiate(charactersPrefabs[i], mousePosition, Quaternion.identity);
+                    characterList.Add(character);   
                     resetSelectionFalse();
 
                     GameObject playerManagerObject = GameObject.Find("PlayerManager");
