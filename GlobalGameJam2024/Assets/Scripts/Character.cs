@@ -15,6 +15,7 @@ public abstract class Character : MonoBehaviour
         Idle,
         Dead,
         Active,
+        Reactive,
         First
     }
 
@@ -31,6 +32,8 @@ public abstract class Character : MonoBehaviour
     public abstract void Dead();
 
     public abstract void Active();
+
+    public abstract void Reactive();
 
     public State GetCharacterState()
     {
@@ -81,6 +84,9 @@ public abstract class Character : MonoBehaviour
                 break;
             case State.Active:
                 Active();
+                break;
+            case State.Reactive:
+                Reactive();
                 break;
         }
     }

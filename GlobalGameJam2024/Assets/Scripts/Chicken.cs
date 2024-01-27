@@ -18,4 +18,9 @@ public class Chicken : Character
     {
         Walk();
     }
+
+    public override void Reactive()
+    {
+
+    }
 }

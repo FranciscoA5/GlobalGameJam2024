@@ -18,4 +18,9 @@ public class Drunk : Character
     {
 
     }
+
+    public override void Reactive()
+    {
+
+    }
 }
