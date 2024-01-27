@@ -39,6 +39,11 @@ public class Woman : Character
         Cry();
     }
 
+    public override void Reactive()
+    {
+        
+    }
+
     public void Scream()
     {
         anim.SetBool("isScreaming", true);

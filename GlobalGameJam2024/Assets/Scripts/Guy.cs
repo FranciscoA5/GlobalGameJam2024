@@ -33,6 +33,11 @@ public class Guy : Character
         GetClose(characterPositionToRunAway);
     }
 
+    public override void Reactive()
+    {
+
+    }
+
     void RunAway(float xPos)
     {
         anim.SetBool("isWalking", true);
