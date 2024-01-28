@@ -135,6 +135,6 @@ public class Guy : Character
 
     public override void SetList(List<GameObject> _characters)
     {
-        throw new System.NotImplementedException();
+        
     }
 }

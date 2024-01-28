@@ -161,8 +161,6 @@ public class Fat : Character
                 {
                     audioManager.PlaySound("ChickenScream");
                     collision.gameObject.GetComponent<Character>().SwitchState(State.Dead);
-                    //characterSpawning.Remove(collision.gameObject);
-                    //Destroy(collision.gameObject);
                 }
             }
         }  

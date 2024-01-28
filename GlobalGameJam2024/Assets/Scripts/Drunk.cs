@@ -44,7 +44,7 @@ public class Drunk : Character
 
     public override void SetList(List<GameObject> _characters)
     {
-        throw new System.NotImplementedException();
+
     }
     public void Dance()
     {
