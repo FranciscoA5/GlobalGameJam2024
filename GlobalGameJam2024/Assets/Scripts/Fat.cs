@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Fat : Character
@@ -7,12 +8,20 @@ public class Fat : Character
     [SerializeField] private float screamRange;
     public int circleSegments = 30;
 
+    [SerializeField] List<GameObject> characterSpawning;
+    public void SetList(List<GameObject> _characters)
+    {
+        characterSpawning = _characters;
+    }
+
     private void OnMouseDown()
     {
         SwitchToIdleState(); // This line ensures that the previously first character goes back to idle state
 
         // Change the state of the clicked woman to active
         SwitchState(State.First);
+
+        
 
 
     }
@@ -102,6 +111,7 @@ public class Fat : Character
 
         if (collision.gameObject.tag == "Chicken")
         {
+            characterSpawning.Remove(collision.gameObject);
             Destroy(collision.gameObject);
         }
 

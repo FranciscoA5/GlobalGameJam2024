@@ -83,6 +83,7 @@ public abstract class Character : MonoBehaviour
                 Dead();
                 break;
             case State.Active:
+                spriteRenderer.color = Color.white;
                 Active();
                 break;
             case State.Reactive:

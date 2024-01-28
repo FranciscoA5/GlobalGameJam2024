@@ -27,6 +27,7 @@ public class PunchlineButton : MonoBehaviour
             if(characterScript.GetCharacterState() == Character.State.First)
             {
                 characterScript.SwitchState(Character.State.Active);
+              
             }
         }
     }
