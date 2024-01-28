@@ -35,8 +35,9 @@ public class PlayerManager : MonoBehaviour
         return jokePoints;
     }
 
-    private int playerMoney = 1000;
+    private int playerMoney = 200;
     public TextMeshProUGUI playerMoneyDisplay;
+   
 
     //preço que cada character custa
     [SerializeField] private int[] charactersMoney = new int[6];
