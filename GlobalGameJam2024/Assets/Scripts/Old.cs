@@ -28,26 +28,26 @@ public class Old : Character
 
 
     }
-    private void Awake()
-    {
-        caneThrowDirection.x = caneThrowSpot.position.x - transform.position.x;
-        caneThrowDirection.y = caneThrowSpot.position.y;
-        GameObject child = gameObject.transform.GetChild(0).gameObject;
+    //private void Awake()
+    //{
+    //    //caneThrowDirection.x = caneThrowSpot.position.x - transform.position.x;
+    //    //caneThrowDirection.y = caneThrowSpot.position.y;
+    //    //GameObject child = gameObject.transform.GetChild(0).gameObject;
 
-        Animator animation = GetComponentInChildren<Animator>();
-    }
+    //    //Animator animation = GetComponentInChildren<Animator>();
+    //}
 
     public override void Idle()
     {
-        if (Input.GetKey(KeyCode.A))
-        {
-            SwitchState(State.Active);
-        }
+        //if (Input.GetKey(KeyCode.A))
+        //{
+        //    SwitchState(State.Active);
+        //}
 
-        if (Input.GetKey(KeyCode.F))
-        {
-            SwitchState(State.Reactive);
-        }
+        //if (Input.GetKey(KeyCode.F))
+        //{
+        //    SwitchState(State.Reactive);
+        //}
     }
 
     public override void Dead()
@@ -57,29 +57,28 @@ public class Old : Character
 
     public override void Active()
     {
+        Debug.Log("OldActive");
         anim.SetBool("isActive", true);
         ThrowCane();
     }
 
     public override void Reactive()
     {
+        GameObject pee = Instantiate(peeLine, peeCenter.position, Quaternion.identity);
+        pee.transform.localScale = new Vector3(peeRange * 2, 0.362f, 1);
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(peeCenter.position, peeRange);
         for (int i = 0; i < colliders.Length; i++)
         {
             if (colliders[i].gameObject.TryGetComponent<Guy>(out Guy guy) ||
-                colliders[i].gameObject.TryGetComponent<Chicken>(out Chicken chicken)
-                //colliders[i].gameObject.TryGetComponent<Fat>(out Fat fat))
-                )
+                colliders[i].gameObject.TryGetComponent<Chicken>(out Chicken chicken) ||
+                colliders[i].gameObject.TryGetComponent<Fat>(out Fat fat))     
             {
-
-                GameObject pee = Instantiate(peeLine, peeCenter.position, Quaternion.identity);
-                pee.transform.localScale = new Vector3(peeRange * 2, 0.362f, 1);
                 Rigidbody2D vRb = colliders[i].gameObject.GetComponent<Rigidbody2D>();
                 RunAwayFromPee(transform, colliders[i].gameObject.transform, vRb);
             }
             else if (colliders[i].gameObject.TryGetComponent<Character>(out Character charac))
-            {
+            {  
                 charac.SwitchState(State.Reactive);
             }
         }
@@ -87,6 +86,8 @@ public class Old : Character
 
     private void ThrowCane()
     {
+        caneThrowDirection.x = caneThrowSpot.position.x - transform.position.x;
+        caneThrowDirection.y = 0;
         if (hasCane)
         {
             GameObject newCane = Instantiate(canePrefab, caneThrowSpot.position, Quaternion.identity);
@@ -101,6 +102,8 @@ public class Old : Character
             caneVisual.SetActive(false);
         }
     }
+
+
 
     private void RunAwayFromPee(Transform oldPosition, Transform victimPosition, Rigidbody2D victimRb) 
     {

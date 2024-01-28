@@ -392,6 +392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   screamRange: 5.76
   circleSegments: 30
+  characterSpawning: []
 --- !u!1 &6207608293050932865
 GameObject:
   m_ObjectHideFlags: 0
