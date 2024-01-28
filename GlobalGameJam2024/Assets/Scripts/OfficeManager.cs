@@ -98,7 +98,7 @@ public class OfficeManager : MonoBehaviour
             }
             else if (counter == 5)
             {
-                SceneManager.LoadScene("");
+                SceneManager.LoadScene("Ending");
             }
         }
     }

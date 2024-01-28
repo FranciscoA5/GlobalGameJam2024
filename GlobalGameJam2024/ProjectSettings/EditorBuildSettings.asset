@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Duarte.unity
     guid: eee8fa6690947f5449cca49155523c57
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: 755bf81adeed79c48aa76eae7f25eb52
   m_configObjects: {}

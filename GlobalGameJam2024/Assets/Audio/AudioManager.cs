@@ -38,7 +38,7 @@ public class AudioManager : MonoBehaviour
     //starting music
     private void Start()
     {   
-        //PlaySound("Theme");
+        PlaySound("BackgroundMusic");
     }
 
     //function to play sound

@@ -17,11 +17,8 @@ public class ExitGame : MonoBehaviour
     // Function to close the game
     public void CloseGame()
     {
-        // This will work in the Unity Editor and in a standalone build
-        #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-        #else
+       
             Application.Quit();
-        #endif
+ 
     }
 }
