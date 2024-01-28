@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Guy : Character
 {
-    [SerializeField] float screamRange;
+    [SerializeField] float collideRange;
     float characterPositionToRunAway;
 
     private void OnMouseDown()
@@ -16,16 +16,13 @@ public class Guy : Character
 
 
     }
-    int direction;
+    int direction = 1;
 
     GameObject woman;
 
     public override void Idle()
     {
-        if (Input.GetKey(KeyCode.A))
-        {
-            SwitchState(State.Active);
-        }
+        Walk();
     }
 
     public override void Dead()
@@ -35,26 +32,29 @@ public class Guy : Character
 
     public override void Active()
     {
-        Run(characterPositionToRunAway, direction);
-        if (woman.GetComponent<Character>().GetCharacterState() == State.Reactive) GetClose(characterPositionToRunAway);
-        else if (woman.GetComponent<Character>().GetCharacterState() == State.Idle) GetActions();
-        //this.SwitchState(State.Idle);
+        if (woman != null)
+        {
+            if (woman.GetComponent<Character>().GetCharacterState() == State.Reactive) GetClose(characterPositionToRunAway);
+            else if (woman.GetComponent<Character>().GetCharacterState() == State.Idle) GetActions();
+        }
+        RunAway(characterPositionToRunAway, direction);
     }
 
     public override void Reactive()
     {
-        
+
     }
 
-    public void Run(float xPos, int direction)
+    void RunAway(float xPos, int direction)
     {
         anim.SetBool("isWalking", true);
-        if (woman.GetComponent<Character>().GetCharacterState() == State.Idle) 
+
+        if (xPos == 0)
         {
             rb2d.velocity = new Vector3(2, 0, 0) * direction;
             return;
-        } 
-        
+        }
+
         else if (xPos > transform.position.x)
         {
             rb2d.velocity = new Vector3(2, 0, 0) * direction;
@@ -67,13 +67,13 @@ public class Guy : Character
     {
         Debug.Log("Getting close");
 
-        if (xPos + 2 < transform.position.x)
+        if (xPos + 3 < transform.position.x)
         {
             anim.SetBool("isWalking", true);
             rb2d.velocity = new Vector3(-2, 0, 0);
             return;
         }
-        else if (xPos - 2 > transform.position.x)
+        else if (xPos - 3 > transform.position.x)
         {
             anim.SetBool("isWalking", true);
             rb2d.velocity = new Vector3(2, 0, 0);
@@ -87,7 +87,7 @@ public class Guy : Character
 
     void GetActions()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transf.position, screamRange);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transf.position, collideRange);
         for (int i = 0; i < colliders.Length; i++)
         {
             if (colliders[i].gameObject.TryGetComponent<Woman>(out Woman woman))
@@ -128,8 +128,8 @@ public class Guy : Character
         direction = _direction;
     }
 
-    public void SetWoman(GameObject _woman)
+    public void SetWoman(GameObject _women)
     {
-        woman = _woman;
+        woman = _women;
     }
 }
