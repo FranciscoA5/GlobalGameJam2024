@@ -310,22 +310,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4297793078261537198, guid: 2b2afe8269f414b4da7fa42b1b5c057e, type: 3}
   m_PrefabInstance: {fileID: 4413912162710939153}
   m_PrefabAsset: {fileID: 0}
---- !u!70 &7324379846695201950
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 496954728601632703}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.02, y: 1.55}
-  m_Size: {x: 2.19, y: 3.02}
-  m_Direction: 0
 --- !u!95 &8897115553111223477
 Animator:
   serializedVersion: 5

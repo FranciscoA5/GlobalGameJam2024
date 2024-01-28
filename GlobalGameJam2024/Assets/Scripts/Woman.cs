@@ -8,6 +8,8 @@ public class Woman : Character
 
     public int circleSegments = 30;
 
+    
+
     private void OnMouseDown()
     {
         SwitchToIdleState(); // This line ensures that the previously first character goes back to idle state
@@ -22,6 +24,8 @@ public class Woman : Character
     {
         Walk();
         GetCollisions(1);
+        anim.SetBool("isScreaming", false);
+        anim.SetBool("isWalking", true);
     }
 
     public override void Dead()
@@ -30,15 +34,15 @@ public class Woman : Character
     }
 
     public override void Active()
-
     {
+        
         Scream();
 
     }
 
     public override void Reactive()
     {
-        
+       
     }
 
     void GetCollisions(int direction)
@@ -94,13 +98,17 @@ public class Woman : Character
 
     public void Scream()
     {
+        audioManager.PlaySound("WomanScream");
         anim.SetBool("isScreaming", true);
         GetCollisions(-1);
+        SwitchState(State.Idle);    
+  
     }
 
     public void Cry()
     {
         anim.SetBool("isCrying", true);
+        audioManager.PlaySound("WomanCry");
         GetCollisions(1);
     }
 

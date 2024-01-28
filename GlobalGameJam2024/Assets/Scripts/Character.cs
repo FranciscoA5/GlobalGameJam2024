@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class Character : MonoBehaviour
@@ -9,12 +10,14 @@ public abstract class Character : MonoBehaviour
     protected Transform transf;
     protected int characterClicked = 0;
     private SpriteRenderer spriteRenderer;
+    protected AudioManager audioManager;
 
     protected bool inCharacterGame;
 
     void Awake()
     {
         GameManager.OnGameStateChange += GameManagerOnGameStateChange;
+       
     }
 
     private void OnDestroy()
@@ -86,6 +89,7 @@ public abstract class Character : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         transf = transform;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     private void Update()
@@ -97,20 +101,26 @@ public abstract class Character : MonoBehaviour
             switch (currState)
             {
                 case State.Idle:
-                    spriteRenderer.color = Color.white;
+
                     Idle();
                     break;
                 case State.Dead:
                     Dead();
                     break;
                 case State.Active:
+
                     Active();
                     break;
                 case State.Reactive:
                     Reactive();
                     break;
             }
-        }  
+        
+        }
+        if (currState != State.First)
+        {
+            spriteRenderer.color = Color.white;
+        }
     }
 
     public void SwitchState(State newState)
