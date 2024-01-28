@@ -3,31 +3,20 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Guy
-  - Woman
-  - Chicken
-<<<<<<< HEAD
-  - Fat
-  - Drunk
-=======
-  - Drunk
-  - Fat
->>>>>>> Gil-reactions
-  - Old
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Character
+  - 
   - Water
   - UI
-  - Chicken
-  - Guy
-  - Drunk
-  - Fat
-  - Women
-  - Old
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -51,7 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: 1
-    uniqueID: 118996275
     locked: 0
