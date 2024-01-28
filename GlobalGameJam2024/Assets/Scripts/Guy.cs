@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Guy : Character
 {
-    [SerializeField] float screamRange;
+    [SerializeField] float collideRange;
     float characterPositionToRunAway;
 
     private void OnMouseDown()
@@ -16,7 +16,7 @@ public class Guy : Character
 
 
     }
-    int direction;
+    int direction = 1;
 
     GameObject woman;
 
@@ -35,10 +35,12 @@ public class Guy : Character
 
     public override void Active()
     {
+        if (woman != null)
+        {
+            if (woman.GetComponent<Character>().GetCharacterState() == State.Reactive) GetClose(characterPositionToRunAway);
+            else if (woman.GetComponent<Character>().GetCharacterState() == State.Idle) GetActions();
+        }
         Run(characterPositionToRunAway, direction);
-        if (woman.GetComponent<Character>().GetCharacterState() == State.Reactive) GetClose(characterPositionToRunAway);
-        else if (woman.GetComponent<Character>().GetCharacterState() == State.Idle) GetActions();
-        //this.SwitchState(State.Idle);
     }
 
     public override void Reactive()
@@ -49,12 +51,13 @@ public class Guy : Character
     public void Run(float xPos, int direction)
     {
         anim.SetBool("isWalking", true);
-        if (woman.GetComponent<Character>().GetCharacterState() == State.Idle) 
+
+        if (xPos == 0)
         {
             rb2d.velocity = new Vector3(2, 0, 0) * direction;
             return;
-        } 
-        
+        }
+
         else if (xPos > transform.position.x)
         {
             rb2d.velocity = new Vector3(2, 0, 0) * direction;
@@ -87,7 +90,7 @@ public class Guy : Character
 
     void GetActions()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transf.position, screamRange);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transf.position, collideRange);
         for (int i = 0; i < colliders.Length; i++)
         {
             if (colliders[i].gameObject.TryGetComponent<Woman>(out Woman woman))

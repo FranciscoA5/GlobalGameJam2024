@@ -10,6 +10,23 @@ public abstract class Character : MonoBehaviour
     protected int characterClicked = 0;
     private SpriteRenderer spriteRenderer;
 
+    protected bool inCharacterGame;
+
+    void Awake()
+    {
+        GameManager.OnGameStateChange += GameManagerOnGameStateChange;
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.OnGameStateChange -= GameManagerOnGameStateChange;
+    }
+
+    private void GameManagerOnGameStateChange(GameState state)
+    {
+        inCharacterGame = state == GameState.Joke;
+    }
+
     public enum State
     {
         Idle,
@@ -73,22 +90,27 @@ public abstract class Character : MonoBehaviour
 
     private void Update()
     {
-        switch (currState)
+
+        if (inCharacterGame)
         {
-            case State.Idle:
-                spriteRenderer.color = Color.white;
-                Idle();
-                break;
-            case State.Dead:
-                Dead();
-                break;
-            case State.Active:
-                Active();
-                break;
-            case State.Reactive:
-                Reactive();
-                break;
-        }
+            Debug.Log("GameStateJoke");
+            switch (currState)
+            {
+                case State.Idle:
+                    spriteRenderer.color = Color.white;
+                    Idle();
+                    break;
+                case State.Dead:
+                    Dead();
+                    break;
+                case State.Active:
+                    Active();
+                    break;
+                case State.Reactive:
+                    Reactive();
+                    break;
+            }
+        }  
     }
 
     public void SwitchState(State newState)

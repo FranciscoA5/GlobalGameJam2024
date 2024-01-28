@@ -6,6 +6,8 @@ public class PunchlineButton : MonoBehaviour
 {
     GameObject canvasObject;
     CharacterSpawning characterSpawning;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,8 @@ public class PunchlineButton : MonoBehaviour
             if(characterScript.GetCharacterState() == Character.State.First)
             {
                 characterScript.SwitchState(Character.State.Active);
+                GameManager.Instance.UpdateGameState(GameState.Joke);
+                return;
             }
         }
     }

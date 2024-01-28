@@ -21,11 +21,7 @@ public class Woman : Character
     public override void Idle()
     {
         Walk();
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            SwitchState(State.Active);
-        }
+        GetCollisions(1);
     }
 
     public override void Dead()
@@ -43,47 +39,67 @@ public class Woman : Character
         Cry();
     }
 
-    public void Scream()
+    void GetCollisions(int direction)
     {
-        anim.SetBool("isScreaming", true);
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transf.position, screamRange);
         for (int i = 0; i < colliders.Length; i++)
         {
             if (colliders[i].gameObject.TryGetComponent<Guy>(out Guy guy))
             {
-                Debug.Log("Deteta Guy");
                 guy.GetCharacterPosition(transform.position.x);
-                guy.GetDirection(-1);
+                guy.GetDirection(direction);
                 guy.SetWoman(gameObject);
                 guy.SwitchState(State.Active);
             }
+
+            else if(colliders[i].gameObject.TryGetComponent<Fat>(out Fat fat))
+            {
+                fat.GetCharacterPosition(transform.position.x);
+                fat.SetWoman(gameObject);
+                fat.SwitchState(State.Active);
+            }
+
+            else if (colliders[i].gameObject.TryGetComponent<Woman>(out Woman woman))
+            {
+                if(woman.GetComponent<Character>().GetCharacterState() == State.Active)
+                {
+                    SwitchState(State.Active);
+                }
+            }
+
+            else if(colliders[i].gameObject.TryGetComponent<Old>(out Old old))
+            {
+                if (GetCharacterState() == State.Active || GetCharacterState() == State.Reactive)
+                {
+                    old.GetComponent<Character>().SwitchState(State.Reactive);
+                }
+            }
+
+            else if (colliders[i].gameObject.TryGetComponent<Chicken>(out Chicken chicken))
+            {
+                if (GetCharacterState() == State.Active)
+                {
+                    chicken.GetComponent<Character>().SwitchState(State.Active);
+                }
+            }
+
             else if (colliders[i].gameObject.TryGetComponent<Character>(out Character charac))
             {
                 //C�digo 
-                Debug.Log("deteta character");
             }
         }
+    }
+
+    public void Scream()
+    {
+        anim.SetBool("isScreaming", true);
+        GetCollisions(-1);
     }
 
     public void Cry()
     {
         anim.SetBool("isCrying", true);
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transf.position, screamRange);
-        for (int i = 0; i < colliders.Length; i++)
-        {
-            if (colliders[i].gameObject.TryGetComponent<Guy>(out Guy guy))
-            {
-                Debug.Log("Deteta Guy");
-                guy.GetCharacterPosition(transform.position.x);
-                guy.GetDirection(1);
-                guy.SwitchState(State.Active);
-            }
-            else if (colliders[i].gameObject.TryGetComponent<Character>(out Character charac))
-            {
-                //C�digo 
-                Debug.Log("deteta character");
-            }
-        }
+        GetCollisions(1);
     }
 
     //private void OnDrawGizmos()
