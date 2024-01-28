@@ -34,9 +34,10 @@ public class Woman : Character
     }
 
     public override void Active()
-    { 
-        //Scream();
-        Cry();
+
+    {
+        Scream();
+
     }
 
     public override void Reactive()
@@ -58,7 +59,7 @@ public class Woman : Character
             }
             else if (colliders[i].gameObject.TryGetComponent<Character>(out Character charac))
             {
-                //Código 
+                //Cï¿½digo 
                 Debug.Log("deteta character");
             }
         }
@@ -78,16 +79,17 @@ public class Woman : Character
             }
             else if (colliders[i].gameObject.TryGetComponent<Character>(out Character charac))
             {
-                //Código 
+                //Cï¿½digo 
                 Debug.Log("deteta character");
             }
         }
     }
 
+    /*
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transf.position, screamRange);
+        Gizmos.DrawWireSphere(transform.position, screamRange);
 
         // Draw a circle to visualize the attack range
         float angleStep = 360f / circleSegments;
@@ -95,7 +97,7 @@ public class Woman : Character
         for (int i = 0; i <= circleSegments; i++)
         {
             float angle = Mathf.Deg2Rad * i * angleStep;
-            Vector3 newPos = transf.position + new Vector3(Mathf.Cos(angle) * screamRange, Mathf.Sin(angle) * screamRange, 0f);
+            Vector3 newPos = transform.position + new Vector3(Mathf.Cos(angle) * screamRange, Mathf.Sin(angle) * screamRange, 0f);
             if (i > 0)
             {
                 Gizmos.DrawLine(prevPos, newPos);
@@ -103,4 +105,5 @@ public class Woman : Character
             prevPos = newPos;
         }
     }
+    */
 }

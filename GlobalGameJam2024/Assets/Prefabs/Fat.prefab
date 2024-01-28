@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 662891399505785364}
   - component: {fileID: 1489744455382228417}
   - component: {fileID: -1064013381936217247}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Fat
   m_TagString: Fat
   m_Icon: {fileID: 0}
