@@ -22,10 +22,7 @@ public class Guy : Character
 
     public override void Idle()
     {
-        if (Input.GetKey(KeyCode.A))
-        {
-            SwitchState(State.Active);
-        }
+        Walk();
     }
 
     public override void Dead()
@@ -45,10 +42,10 @@ public class Guy : Character
 
     public override void Reactive()
     {
-        
+
     }
 
-    public void Run(float xPos, int direction)
+    void RunAway(float xPos)
     {
         anim.SetBool("isWalking", true);
 
@@ -63,7 +60,7 @@ public class Guy : Character
             rb2d.velocity = new Vector3(2, 0, 0) * direction;
             return;
         }
-        rb2d.velocity = new Vector3(2, 0, 0) * -direction;
+        rb2d.velocity = new Vector3(2, 0, 0);
     }
 
     void GetClose(float xPos)
@@ -124,15 +121,5 @@ public class Guy : Character
     public void GetCharacterPosition(float _characterXPosition)
     {
         characterPositionToRunAway = _characterXPosition;
-    }
-
-    public void GetDirection(int _direction)
-    {
-        direction = _direction;
-    }
-
-    public void SetWoman(GameObject _woman)
-    {
-        woman = _woman;
     }
 }

@@ -19,11 +19,6 @@ public class Chicken : Character
         
     }
 
-    public override void Reactive()
-    {
-        
-    }
-
     public override void Dead()
     {
      
@@ -32,5 +27,10 @@ public class Chicken : Character
     public override void Idle()
     {
         Walk();
+    }
+
+    public override void Reactive()
+    {
+
     }
 }

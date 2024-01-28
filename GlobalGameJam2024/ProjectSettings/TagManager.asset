@@ -4,13 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Guy
   - Woman
-  - Chicken
-  - Fat
-  - Drunk
+  - Guy
   - Old
   - Ground
+  - Chicken
+  - Drunk
+  - Fat
   layers:
   - Default
   - TransparentFX
@@ -18,12 +18,12 @@ TagManager:
   - Character
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Woman
+  - Guy
+  - Fat
+  - Old
+  - Chicken
+  - Drunk
   - 
   - 
   - 
@@ -47,7 +47,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: 1
-    uniqueID: 118996275
     locked: 0

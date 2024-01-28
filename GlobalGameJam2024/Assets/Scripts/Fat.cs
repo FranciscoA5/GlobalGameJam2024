@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Fat : Character
@@ -9,6 +10,11 @@ public class Fat : Character
 
     public int circleSegments = 30;
 
+    [SerializeField] List<GameObject> characterSpawning;
+    public void SetList(List<GameObject> _characters)
+    {
+        characterSpawning = _characters;
+    }
     bool chasingFood;
 
     GameObject woman;
@@ -36,6 +42,8 @@ public class Fat : Character
 
         // Change the state of the clicked woman to active
         SwitchState(State.First);
+
+        
 
 
     }
