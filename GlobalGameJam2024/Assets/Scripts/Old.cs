@@ -55,9 +55,6 @@ public class Old : Character
 
     public override void Reactive()
     {
-<<<<<<< HEAD
-        
-=======
         Collider2D[] colliders = Physics2D.OverlapCircleAll(peeCenter.position, peeRange);
         for (int i = 0; i < colliders.Length; i++)
         {
@@ -77,7 +74,6 @@ public class Old : Character
                 charac.SwitchState(State.Reactive);
             }
         }
->>>>>>> Gil-reactions
     }
 
     private void ThrowCane()
