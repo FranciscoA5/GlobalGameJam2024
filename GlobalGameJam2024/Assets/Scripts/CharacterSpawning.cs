@@ -89,7 +89,7 @@ public class CharacterSpawning : MonoBehaviour
                
                 GameObject character = Instantiate(charactersPrefabs[i], mousePosition, Quaternion.identity);
                 characterList.Add(character);
-                character.GetComponent<Fat>()?.SetList(characterList);
+                character.GetComponent<Character>().SetList(characterList);
                 resetSelectionFalse();
 
                 GameObject playerManagerObject = GameObject.Find("PlayerManager");

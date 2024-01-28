@@ -24,8 +24,8 @@ public class Woman : Character
     {
         Walk();
         GetCollisions(1);
-        anim.SetBool("isScreaming", false);
-        anim.SetBool("isWalking", true);
+        //anim.SetBool("isScreaming", false);
+        //anim.SetBool("isWalking", true);
     }
 
     public override void Dead()
@@ -110,6 +110,11 @@ public class Woman : Character
         anim.SetBool("isCrying", true);
         audioManager.PlaySound("WomanCry");
         GetCollisions(1);
+    }
+
+    public override void SetList(List<GameObject> _characters)
+    {
+        
     }
 
     /*

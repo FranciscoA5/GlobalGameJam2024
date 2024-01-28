@@ -57,10 +57,10 @@ public class Guy : Character
 
         else if (xPos > transform.position.x)
         {
-            rb2d.velocity = new Vector3(2, 0, 0) * direction;
+            rb2d.velocity = new Vector3(2, 0, 0) * -direction;
             return;
         }
-        rb2d.velocity = new Vector3(2, 0, 0) * -direction;
+        rb2d.velocity = new Vector3(2, 0, 0) * direction;
     }
 
     void GetClose(float xPos)
@@ -131,5 +131,10 @@ public class Guy : Character
     public void SetWoman(GameObject _women)
     {
         woman = _women;
+    }
+
+    public override void SetList(List<GameObject> _characters)
+    {
+        throw new System.NotImplementedException();
     }
 }

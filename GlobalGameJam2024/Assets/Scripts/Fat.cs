@@ -11,7 +11,7 @@ public class Fat : Character
     public int circleSegments = 30;
 
     [SerializeField] List<GameObject> characterSpawning;
-    public void SetList(List<GameObject> _characters)
+    public override void SetList(List<GameObject> _characters)
     {
         characterSpawning = _characters;
     }
@@ -152,13 +152,17 @@ public class Fat : Character
             {
                 if (collision.gameObject.tag != "Chicken")
                 {
+                    audioManager.PlaySound("FatManPush");
                     Vector2 forceDirection = new Vector2(70, 70);
                     collision.rigidbody.AddForce(forceDirection, ForceMode2D.Impulse);
                 }
 
                 else
                 {
-                    Destroy(collision.gameObject);
+                    audioManager.PlaySound("ChickenScream");
+                    collision.gameObject.GetComponent<Character>().SwitchState(State.Dead);
+                    //characterSpawning.Remove(collision.gameObject);
+                    //Destroy(collision.gameObject);
                 }
             }
         }  

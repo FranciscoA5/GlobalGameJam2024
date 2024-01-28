@@ -55,6 +55,8 @@ public abstract class Character : MonoBehaviour
 
     public abstract void Reactive();
 
+    public abstract void SetList(List<GameObject> _characters);
+
     public State GetCharacterState()
     {
         return currState;

@@ -89,6 +89,7 @@ public class Old : Character
 
     private void ThrowCane()
     {
+        audioManager.PlaySound("CaneThrowing");
         caneThrowDirection.x = caneThrowSpot.position.x - transform.position.x;
         caneThrowDirection.y = 0;
         if (hasCane)
@@ -104,6 +105,7 @@ public class Old : Character
             }
             hasCane = false;
             caneVisual.SetActive(false);
+            currState = State.Idle;
         }
     }
 
@@ -126,6 +128,11 @@ public class Old : Character
     {
         yield return new WaitForSeconds(delay);
         Destroy(caneObject);
+    }
+
+    public override void SetList(List<GameObject> _characters)
+    {
+        throw new System.NotImplementedException();
     }
 
     /*
