@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class PlayerManager : MonoBehaviour
 {
     public List<Tuple<string, GameObject>> jkList = new List<Tuple<string, GameObject>>();
-    private int jokePoints = 0;
+    [SerializeField] private int jokePoints = 0;
     public void AddPoints(string action, GameObject origin, int points)
     {
         if (searchJKList(action, origin) == false){
@@ -29,6 +29,10 @@ public class PlayerManager : MonoBehaviour
         }
 
         return result;
+    }
+    public int GetJokePoints()
+    {
+        return jokePoints;
     }
 
     private int playerMoney = 1000;

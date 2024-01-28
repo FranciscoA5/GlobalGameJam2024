@@ -47,6 +47,8 @@ public class Guy : Character
 
     void RunAway(float xPos, int direction)
     {
+        playerManager.AddPoints("RunAway", gameObject, 5);
+        Debug.Log("Points Added");
         anim.SetBool("isWalking", true);
 
         if (xPos == 0)
@@ -65,6 +67,7 @@ public class Guy : Character
 
     void GetClose(float xPos)
     {
+        playerManager.AddPoints("GetClose", gameObject, 3);
         Debug.Log("Getting close");
 
         if (xPos + 3 < transform.position.x)

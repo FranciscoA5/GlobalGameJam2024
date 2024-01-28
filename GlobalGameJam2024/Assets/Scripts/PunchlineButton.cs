@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PunchlineButton : MonoBehaviour
 {
@@ -34,5 +35,15 @@ public class PunchlineButton : MonoBehaviour
                 
             }
         }
+
+        StartCoroutine("EndPunchline");
+    }
+
+    IEnumerator EndPunchline()
+    {
+        yield return new WaitForSeconds(10f);
+        MeetingData.finalJokePoints = FindAnyObjectByType<PlayerManager>().GetJokePoints();
+        MeetingData.counterValue = 3;
+        SceneManager.LoadScene("MeetingRoom");
     }
 }

@@ -98,6 +98,7 @@ public class Woman : Character
 
     public void Scream()
     {
+        playerManager.AddPoints("Scream", gameObject, 6);
         audioManager.PlaySound("WomanScream");
         anim.SetBool("isScreaming", true);
         GetCollisions(-1);
@@ -107,14 +108,36 @@ public class Woman : Character
 
     public void Cry()
     {
-        audioManager.PlaySound("WomanCry");
+        playerManager.AddPoints("Cry", gameObject, 8);
         anim.SetBool("isCrying", true);
+        audioManager.PlaySound("WomanCry");
         GetCollisions(1);
-        SwitchState(State.Idle);
     }
 
     public override void SetList(List<GameObject> _characters)
     {
         
     }
+
+    /*
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, screamRange);
+
+        // Draw a circle to visualize the attack range
+        float angleStep = 360f / circleSegments;
+        Vector3 prevPos = Vector3.zero;
+        for (int i = 0; i <= circleSegments; i++)
+        {
+            float angle = Mathf.Deg2Rad * i * angleStep;
+            Vector3 newPos = transform.position + new Vector3(Mathf.Cos(angle) * screamRange, Mathf.Sin(angle) * screamRange, 0f);
+            if (i > 0)
+            {
+                Gizmos.DrawLine(prevPos, newPos);
+            }
+            prevPos = newPos;
+        }
+    }
+    */
 }
