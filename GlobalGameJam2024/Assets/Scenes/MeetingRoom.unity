@@ -1769,3 +1769,7 @@ MonoBehaviour:
   clown2Balloon: {fileID: 33348232}
   makeMeLaugh: {fileID: 1417464958}
   balloonText: {fileID: 567114472}
+  clown1faceGood: {fileID: 1150959507}
+  clown2faceGood: {fileID: 519918205}
+  clown1faceBad: {fileID: 700636600}
+  clown2faceBad: {fileID: 1959322721}

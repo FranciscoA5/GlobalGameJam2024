@@ -5,13 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: d17425f6c18060146a17e72148591dee
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Settings.unity
     guid: 7d0f7ccca29fc9d4f8c511efdb05256a
+  - enabled: 1
+    path: Assets/Scenes/MeetingRoom.unity
+    guid: 4534693ed9cf9224d85af7cc103e52fb
+  - enabled: 1
+    path: Assets/Scenes/Duarte.unity
+    guid: eee8fa6690947f5449cca49155523c57
   m_configObjects: {}

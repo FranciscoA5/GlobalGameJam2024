@@ -11,6 +11,7 @@ public abstract class Character : MonoBehaviour
     protected int characterClicked = 0;
     private SpriteRenderer spriteRenderer;
     protected AudioManager audioManager;
+    protected PlayerManager playerManager;
 
     protected bool inCharacterGame;
 
@@ -92,6 +93,7 @@ public abstract class Character : MonoBehaviour
         transf = transform;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         audioManager = FindObjectOfType<AudioManager>();
+        playerManager = FindObjectOfType<PlayerManager>();
     }
 
     private void Update()
