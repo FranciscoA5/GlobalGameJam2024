@@ -97,7 +97,7 @@ public abstract class Character : MonoBehaviour
 
         if (inCharacterGame)
         {
-            Debug.Log("GameStateJoke");
+            
             switch (currState)
             {
                 case State.Idle:
@@ -109,6 +109,7 @@ public abstract class Character : MonoBehaviour
                     break;
                 case State.Active:
 
+                    Debug.Log("GameStateJoke");
                     Active();
                     break;
                 case State.Reactive:

@@ -67,13 +67,13 @@ public class Guy : Character
     {
         Debug.Log("Getting close");
 
-        if (xPos + 2 < transform.position.x)
+        if (xPos + 3 < transform.position.x)
         {
             anim.SetBool("isWalking", true);
             rb2d.velocity = new Vector3(-2, 0, 0);
             return;
         }
-        else if (xPos - 2 > transform.position.x)
+        else if (xPos - 3 > transform.position.x)
         {
             anim.SetBool("isWalking", true);
             rb2d.velocity = new Vector3(2, 0, 0);

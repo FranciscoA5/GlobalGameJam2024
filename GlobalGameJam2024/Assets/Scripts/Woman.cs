@@ -37,12 +37,11 @@ public class Woman : Character
     {
         
         Scream();
-
     }
 
     public override void Reactive()
     {
-       
+        Cry();
     }
 
     void GetCollisions(int direction)
@@ -75,9 +74,10 @@ public class Woman : Character
 
             else if(colliders[i].gameObject.TryGetComponent<Old>(out Old old))
             {
-                if (GetCharacterState() == State.Active || GetCharacterState() == State.Reactive)
+                if (GetComponent<Character>().GetCharacterState() == State.Active || GetComponent<Character>().GetCharacterState() == State.Reactive)
                 {
-                    old.GetComponent<Character>().SwitchState(State.Reactive);
+                    Debug.Log("OldReactive");
+                    old.SwitchState(State.Reactive);
                 }
             }
 

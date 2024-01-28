@@ -19,23 +19,6 @@ public class Fat : Character
 
     GameObject woman;
 
-    //bool inGame;
-
-    //void Awake()
-    //{
-    //    GameManager.OnGameStateChange += GameManagerOnGameStateChange;
-    //}
-
-    //private void OnDestroy()
-    //{
-    //    GameManager.OnGameStateChange -= GameManagerOnGameStateChange;
-    //}
-
-    //private void GameManagerOnGameStateChange(GameState state)
-    //{
-    //    inGame = state == GameState.Joke;
-    //}
-
     private void OnMouseDown()
     {
         SwitchToIdleState(); // This line ensures that the previously first character goes back to idle state

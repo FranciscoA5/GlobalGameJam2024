@@ -28,6 +28,7 @@ public class PunchlineButton : MonoBehaviour
             Character characterScript = character.GetComponent<Character>();
             if(characterScript.GetCharacterState() == Character.State.First)
             {
+                Debug.Log(characterScript);
                 characterScript.SwitchState(Character.State.Active);
                 GameManager.Instance.UpdateGameState(GameState.Joke);
                 
