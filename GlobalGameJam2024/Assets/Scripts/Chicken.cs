@@ -17,6 +17,7 @@ public class Chicken : Character
     }
     public override void Active()
     {
+        audioManager.PlaySound("LayingEgg");
         anim.SetBool("LayingEgg", true);
         foreach(GameObject character in characterSpawning)
         {
@@ -25,6 +26,7 @@ public class Chicken : Character
                 character.GetComponent<Character>().SwitchState(State.Active);
             }
         }
+        currState = State.Idle;
     }
 
     public override void Dead()
