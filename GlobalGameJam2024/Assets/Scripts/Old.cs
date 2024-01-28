@@ -67,6 +67,7 @@ public class Old : Character
 
     public override void Reactive()
     {
+        playerManager.AddPoints("Pee", gameObject, 5);
         GameObject pee = Instantiate(peeLine, peeCenter.position, Quaternion.identity);
         pee.transform.localScale = new Vector3(peeRange * 2, 0.362f, 1);
 
@@ -79,6 +80,7 @@ public class Old : Character
             {
                 Rigidbody2D vRb = colliders[i].gameObject.GetComponent<Rigidbody2D>();
                 RunAwayFromPee(transform, colliders[i].gameObject.transform, vRb);
+                playerManager.AddPoints("RunPee" + i.ToString(), gameObject, 2);
             }
             else if (colliders[i].gameObject.TryGetComponent<Character>(out Character charac))
             {  
@@ -94,7 +96,7 @@ public class Old : Character
         caneThrowDirection.y = 0;
         if (hasCane)
         {
-           
+            playerManager.AddPoints("ThrowCane", gameObject, 4);
             GameObject newCane = Instantiate(canePrefab, caneThrowSpot.position, Quaternion.identity);
             Rigidbody2D caneRb = newCane.GetComponent<Rigidbody2D>();
 

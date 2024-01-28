@@ -27,6 +27,7 @@ public class Drunk : Character
 
     public override void Reactive()
     {
+        playerManager.AddPoints("EnterRage", gameObject, 3);
         rage = true;
     }
 
@@ -37,6 +38,7 @@ public class Drunk : Character
         if (rage)
         {
             Vector2 forceDirection = new Vector2(30, 30);
+            playerManager.AddPoints("GetHitByRage", collision.gameObject, 2);
             collision.rigidbody.AddForce(forceDirection, ForceMode2D.Impulse);
         }
 
@@ -49,5 +51,6 @@ public class Drunk : Character
     public void Dance()
     {
         anim.SetTrigger("DrunkDance");
+        playerManager.AddPoints("Dance", gameObject, 4);
     }
 }

@@ -60,6 +60,8 @@ public class Fat : Character
 
     public void RunAwayFromWoman(float xPos)
     {
+        playerManager.AddPoints("RunAwayWoman", gameObject, 4);
+
         anim.SetBool("isWalking", true);
 
         if (xPos == 0)
@@ -78,6 +80,7 @@ public class Fat : Character
 
     void GetCloseToWomen(float xPos)
     {
+        playerManager.AddPoints("GetCloseWoman", gameObject, 3);
 
         if (xPos + 2 < transform.position.x)
         {
@@ -94,6 +97,8 @@ public class Fat : Character
 
     public void ChaseFood()
     {
+        playerManager.AddPoints("ChaseFood", gameObject, 6);
+
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transf.position, screamRange);
         for (int i = 0; i < colliders.Length; i++)
         {

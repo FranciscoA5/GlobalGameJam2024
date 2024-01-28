@@ -98,6 +98,7 @@ public class Woman : Character
 
     public void Scream()
     {
+        playerManager.AddPoints("Scream", gameObject, 6);
         audioManager.PlaySound("WomanScream");
         anim.SetBool("isScreaming", true);
         GetCollisions(-1);
@@ -107,6 +108,7 @@ public class Woman : Character
 
     public void Cry()
     {
+        playerManager.AddPoints("Cry", gameObject, 8);
         anim.SetBool("isCrying", true);
         audioManager.PlaySound("WomanCry");
         GetCollisions(1);

@@ -310,6 +310,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4297793078261537198, guid: 2b2afe8269f414b4da7fa42b1b5c057e, type: 3}
   m_PrefabInstance: {fileID: 4413912162710939153}
   m_PrefabAsset: {fileID: 0}
+--- !u!70 &6960320754263975533
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496954728601632703}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 1.5}
+  m_Size: {x: 1.94, y: 2.99}
+  m_Direction: 0
 --- !u!95 &8897115553111223477
 Animator:
   serializedVersion: 5
@@ -348,27 +364,11 @@ MonoBehaviour:
   canePrefab: {fileID: 406657942617069173, guid: 8969dee9236b6e14dbc781160190fbe8, type: 3}
   caneVisual: {fileID: 809700049}
   peeLine: {fileID: 7537820515434153702, guid: 497702495aba0ff44a21036766206efa, type: 3}
-  throwForce: 40
+  throwForce: 9
   caneLifeSpan: 2
-  peeRange: 10
+  peeRange: 4
   victimForce: 0.05
   circleSegments: 30
---- !u!70 &6960320754263975533
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 496954728601632703}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.5}
-  m_Size: {x: 1.94, y: 2.99}
-  m_Direction: 0
 --- !u!4 &6036881530725892316 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7964073321650317005, guid: 2b2afe8269f414b4da7fa42b1b5c057e, type: 3}

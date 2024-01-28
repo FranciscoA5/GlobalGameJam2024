@@ -18,6 +18,7 @@ public class Chicken : Character
     public override void Active()
     {
         anim.SetBool("LayingEgg", true);
+        playerManager.AddPoints("LayEgg", gameObject, 8);
         foreach(GameObject character in characterSpawning)
         {
             if(character.tag == "Fat")
@@ -38,6 +39,7 @@ public class Chicken : Character
             }
         }
         characterSpawning.Remove(this.gameObject);
+        playerManager.AddPoints("FuckingDie", gameObject, 5);
         Destroy(this.gameObject);
     }
 
