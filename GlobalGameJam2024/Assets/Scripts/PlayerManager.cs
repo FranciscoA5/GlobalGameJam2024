@@ -33,7 +33,7 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerMoneyDisplay.text = playerMoney.ToString();
+        playerMoneyDisplay.text = "Giggles: " + playerMoney.ToString();
 
         if (playerMoney <= 0)
         {

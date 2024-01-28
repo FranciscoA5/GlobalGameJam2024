@@ -86,18 +86,17 @@ public class CharacterSpawning : MonoBehaviour
                 Vector3 mousePosition = Input.mousePosition;
                 // Convert the mouse position to world position
                 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, 10f));
-                if(mousePosition.x > -6)
-                {
-                    GameObject character = Instantiate(charactersPrefabs[i], mousePosition, Quaternion.identity);
-                    characterList.Add(character);   
-                    resetSelectionFalse();
+               
+                GameObject character = Instantiate(charactersPrefabs[i], mousePosition, Quaternion.identity);
+                characterList.Add(character);   
+                resetSelectionFalse();
 
-                    GameObject playerManagerObject = GameObject.Find("PlayerManager");
-                    PlayerManager playerManager = playerManagerObject.GetComponent<PlayerManager>();
+                GameObject playerManagerObject = GameObject.Find("PlayerManager");
+                PlayerManager playerManager = playerManagerObject.GetComponent<PlayerManager>();
 
-                    playerManager.decreasePlayerMoney(i);
+                playerManager.decreasePlayerMoney(i);
 
-                }
+                
 
 
             }

@@ -87,17 +87,20 @@ public class Fat : Character
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag != "Chicken")
+
+        if (collision.gameObject.tag != "Ground")
         {
+            if (collision.gameObject.tag != "Chicken")
+            {
 
-           
-            Vector2 forceDirection = new Vector2(70, 70);
-            collision.rigidbody.AddForce(forceDirection, ForceMode2D.Impulse);
+                Vector2 forceDirection = new Vector2(70, 70);
+                collision.rigidbody.AddForce(forceDirection, ForceMode2D.Impulse);
 
-            
-
+            }
         }
-        else
+
+
+        if (collision.gameObject.tag == "Chicken")
         {
             Destroy(collision.gameObject);
         }
