@@ -35,9 +35,16 @@ public class Fat : Character
         Debug.Log("ActiveState");
         if (woman != null && !chasingFood)
         {
-            if (woman.GetComponent<Character>().GetCharacterState() == State.Reactive) GetCloseToWomen(characterPosition);
-            else if (woman.GetComponent<Character>().GetCharacterState() == State.Active) RunAwayFromWoman(characterPosition);
-            return;
+            if (woman.GetComponent<Character>().GetCharacterState() == State.Reactive)
+            {
+                GetCloseToWomen(characterPosition);
+                return;
+            }
+            else if (woman.GetComponent<Character>().GetCharacterState() == State.Active)
+            {
+                RunAwayFromWoman(characterPosition);
+                return;
+            }    
         }
         ChaseFood();
     }
@@ -47,8 +54,16 @@ public class Fat : Character
 
     }
 
+    IEnumerator WaitToDeath()
+    {
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
+    }
+
     public override void Dead()
     {
+        anim.SetBool("isDeath", true);
+        StartCoroutine(WaitToDeath());
 
     }
 
@@ -157,6 +172,13 @@ public class Fat : Character
             {
                 if (collision.gameObject.tag != "Chicken")
                 {
+                    if(collision.gameObject.tag == "Fat")
+                    {
+                        audioManager.PlaySound("FatManDeath");
+                        GetComponent<Character>().SwitchState(State.Dead);
+                        collision.gameObject.GetComponent<Character>().SwitchState(State.Dead);
+                        return;
+                    }
                     audioManager.PlaySound("FatManPush");
                     Vector2 forceDirection = new Vector2(70, 70);
                     collision.rigidbody.AddForce(forceDirection, ForceMode2D.Impulse);

@@ -35,7 +35,6 @@ public class Chicken : Character
             if (character.tag == "Woman")
             {
                 character.GetComponent<Character>().SwitchState(State.Reactive);
-                break;
             }
         }
         characterSpawning.Remove(this.gameObject);
