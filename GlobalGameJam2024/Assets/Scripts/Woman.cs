@@ -88,6 +88,7 @@ public class Woman : Character
         }
     }
 
+    /*
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
@@ -107,4 +108,5 @@ public class Woman : Character
             prevPos = newPos;
         }
     }
+    */
 }

@@ -120,6 +120,7 @@ public class Old : Character
         Destroy(caneObject);
     }
 
+    /*
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
@@ -139,4 +140,5 @@ public class Old : Character
             prevPos = newPos;
         }
     }
+    */
 }
