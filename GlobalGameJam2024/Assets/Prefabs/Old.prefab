@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &283090271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 283090272}
+  m_Layer: 3
+  m_Name: PeeCenter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &283090272
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283090271}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.013, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 496954728601632672}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &809700049
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,38 +139,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110295482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.44, y: 4.57, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 496954728601632672}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2143372251
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2143372252}
-  m_Layer: 3
-  m_Name: Cane Origin
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2143372252
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143372251}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.25, z: 0}
+  m_LocalPosition: {x: 1.72, y: 1.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -170,6 +170,10 @@ PrefabInstance:
       value: Old
       objectReference: {fileID: 0}
     - target: {fileID: 4297793078261537198, guid: 2b2afe8269f414b4da7fa42b1b5c057e, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4297793078261537198, guid: 2b2afe8269f414b4da7fa42b1b5c057e, type: 3}
       propertyPath: m_TagString
       value: Old
       objectReference: {fileID: 0}
@@ -179,11 +183,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4297793078261537201, guid: 2b2afe8269f414b4da7fa42b1b5c057e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.79
+      value: -0.65515107
       objectReference: {fileID: 0}
     - target: {fileID: 4297793078261537201, guid: 2b2afe8269f414b4da7fa42b1b5c057e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.01
+      value: -1.05
       objectReference: {fileID: 0}
     - target: {fileID: 4297793078261537201, guid: 2b2afe8269f414b4da7fa42b1b5c057e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -306,6 +310,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4297793078261537198, guid: 2b2afe8269f414b4da7fa42b1b5c057e, type: 3}
   m_PrefabInstance: {fileID: 4413912162710939153}
   m_PrefabAsset: {fileID: 0}
+--- !u!70 &7324379846695201950
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496954728601632703}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.02, y: 1.55}
+  m_Size: {x: 2.19, y: 3.02}
+  m_Direction: 0
 --- !u!95 &8897115553111223477
 Animator:
   serializedVersion: 5
@@ -340,27 +360,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   caneThrowSpot: {fileID: 2110295483}
-  caneOrigin: {fileID: 2143372252}
+  peeCenter: {fileID: 283090272}
   canePrefab: {fileID: 406657942617069173, guid: 8969dee9236b6e14dbc781160190fbe8, type: 3}
   caneVisual: {fileID: 809700049}
-  throwForce: 3
+  peeLine: {fileID: 7537820515434153702, guid: 497702495aba0ff44a21036766206efa, type: 3}
+  throwForce: 9
   caneLifeSpan: 2
---- !u!70 &7324379846695201950
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 496954728601632703}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.02, y: 1.55}
-  m_Size: {x: 2.19, y: 3.02}
-  m_Direction: 0
+  peeRange: 4
+  victimForce: 0.05
+  circleSegments: 30
 --- !u!4 &6036881530725892316 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7964073321650317005, guid: 2b2afe8269f414b4da7fa42b1b5c057e, type: 3}

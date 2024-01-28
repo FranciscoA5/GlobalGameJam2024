@@ -3,20 +3,26 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Woman
+  - Guy
+  - Old
+  - Chicken
+  - Drunk
+  - Fat
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Character
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Woman
+  - Guy
+  - Fat
+  - Old
+  - Chicken
+  - Drunk
   - 
   - 
   - 

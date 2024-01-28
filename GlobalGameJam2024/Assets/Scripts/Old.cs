@@ -39,7 +39,15 @@ public class Old : Character
 
     public override void Idle()
     {
-        
+        if (Input.GetKey(KeyCode.A))
+        {
+            SwitchState(State.Active);
+        }
+
+        if (Input.GetKey(KeyCode.F))
+        {
+            SwitchState(State.Reactive);
+        }
     }
 
     public override void Dead()
@@ -86,7 +94,6 @@ public class Old : Character
             if (caneRb != null)
             {
                 caneRb.AddForce(caneThrowDirection * throwForce, ForceMode2D.Impulse);
-                float i = 0;
                 StartCoroutine(DestroyCaneAfterDelay(newCane, caneLifeSpan));
             }
             hasCane = false;
