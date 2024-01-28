@@ -37,7 +37,7 @@ public class Guy : Character
             if (woman.GetComponent<Character>().GetCharacterState() == State.Reactive) GetClose(characterPositionToRunAway);
             else if (woman.GetComponent<Character>().GetCharacterState() == State.Idle) GetActions();
         }
-        Run(characterPositionToRunAway, direction);
+        RunAway(characterPositionToRunAway, direction);
     }
 
     public override void Reactive()
@@ -45,7 +45,7 @@ public class Guy : Character
 
     }
 
-    void RunAway(float xPos)
+    void RunAway(float xPos, int direction)
     {
         anim.SetBool("isWalking", true);
 
@@ -60,7 +60,7 @@ public class Guy : Character
             rb2d.velocity = new Vector3(2, 0, 0) * direction;
             return;
         }
-        rb2d.velocity = new Vector3(2, 0, 0);
+        rb2d.velocity = new Vector3(2, 0, 0) * -direction;
     }
 
     void GetClose(float xPos)
@@ -121,5 +121,15 @@ public class Guy : Character
     public void GetCharacterPosition(float _characterXPosition)
     {
         characterPositionToRunAway = _characterXPosition;
+    }
+
+    public void GetDirection(int _direction)
+    {
+        direction = _direction;
+    }
+
+    public void SetWoman(GameObject _women)
+    {
+        woman = _women;
     }
 }
