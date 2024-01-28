@@ -84,37 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1762804680
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1762804681}
-  m_Layer: 3
-  m_Name: PeeCenter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1762804681
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1762804680}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.05, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 496954728601632672}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2110295482
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,7 +108,38 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110295482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.61, y: 2.41, z: 0}
+  m_LocalPosition: {x: 1.44, y: 4.57, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 496954728601632672}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2143372251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2143372252}
+  m_Layer: 3
+  m_Name: Cane Origin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2143372252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143372251}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 4.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -153,14 +153,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1489744455382228417, guid: 2b2afe8269f414b4da7fa42b1b5c057e, type: 3}
-      propertyPath: m_Size.y
-      value: 3.0875072
-      objectReference: {fileID: 0}
-    - target: {fileID: 1489744455382228417, guid: 2b2afe8269f414b4da7fa42b1b5c057e, type: 3}
-      propertyPath: m_Offset.y
-      value: 2.5728574
-      objectReference: {fileID: 0}
     - target: {fileID: 2539339996768321867, guid: 2b2afe8269f414b4da7fa42b1b5c057e, type: 3}
       propertyPath: m_Controller
       value: 
@@ -178,13 +170,6 @@ PrefabInstance:
       value: Old
       objectReference: {fileID: 0}
     - target: {fileID: 4297793078261537198, guid: 2b2afe8269f414b4da7fa42b1b5c057e, type: 3}
-<<<<<<< HEAD
-=======
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 4297793078261537198, guid: 2b2afe8269f414b4da7fa42b1b5c057e, type: 3}
->>>>>>> Gil-reactions
       propertyPath: m_TagString
       value: Old
       objectReference: {fileID: 0}
@@ -194,11 +179,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4297793078261537201, guid: 2b2afe8269f414b4da7fa42b1b5c057e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.65515107
+      value: 3.79
       objectReference: {fileID: 0}
     - target: {fileID: 4297793078261537201, guid: 2b2afe8269f414b4da7fa42b1b5c057e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.9271992
+      value: -1.01
       objectReference: {fileID: 0}
     - target: {fileID: 4297793078261537201, guid: 2b2afe8269f414b4da7fa42b1b5c057e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -355,10 +340,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   caneThrowSpot: {fileID: 2110295483}
-  peeCenter: {fileID: 1762804681}
+  caneOrigin: {fileID: 2143372252}
   canePrefab: {fileID: 406657942617069173, guid: 8969dee9236b6e14dbc781160190fbe8, type: 3}
   caneVisual: {fileID: 809700049}
-<<<<<<< HEAD
   throwForce: 3
   caneLifeSpan: 2
 --- !u!70 &7324379846695201950
@@ -377,14 +361,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.02, y: 1.55}
   m_Size: {x: 2.19, y: 3.02}
   m_Direction: 0
-=======
-  peeLine: {fileID: 7537820515434153702, guid: 497702495aba0ff44a21036766206efa, type: 3}
-  throwForce: 6
-  caneLifeSpan: 4
-  peeRange: 4
-  victimForce: 0.05
-  circleSegments: 30
->>>>>>> Gil-reactions
 --- !u!4 &6036881530725892316 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7964073321650317005, guid: 2b2afe8269f414b4da7fa42b1b5c057e, type: 3}
