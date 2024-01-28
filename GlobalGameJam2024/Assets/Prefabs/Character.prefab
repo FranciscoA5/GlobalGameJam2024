@@ -94,6 +94,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4297793078261537201}
   - component: {fileID: 662891399505785364}
+  - component: {fileID: 1489744455382228417}
+  - component: {fileID: 8679725122077432363}
   m_Layer: 3
   m_Name: Character
   m_TagString: Woman
@@ -138,6 +140,36 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!70 &1489744455382228417
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4297793078261537198}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.008015752, y: 1.5550563}
+  m_Size: {x: 1.8626783, y: 3.0840964}
+  m_Direction: 0
+--- !u!114 &8679725122077432363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4297793078261537198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65b6b5926bcc58749b84945cc5e9a6ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screamRange: 5
+  circleSegments: 30
 --- !u!1 &5158722049469681006
 GameObject:
   m_ObjectHideFlags: 0
