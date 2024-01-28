@@ -19,6 +19,7 @@ public class Old : Character
     private bool hasCane = true;
     private Vector2 caneThrowDirection;
 
+    
     private void OnMouseDown()
     {
         SwitchToIdleState(); // This line ensures that the previously first character goes back to idle state
@@ -60,6 +61,8 @@ public class Old : Character
         Debug.Log("OldActive");
         anim.SetBool("isActive", true);
         ThrowCane();
+        anim.SetBool("isActive", true);
+        
     }
 
     public override void Reactive()
@@ -86,10 +89,12 @@ public class Old : Character
 
     private void ThrowCane()
     {
+        audioManager.PlaySound("CaneThrowing");
         caneThrowDirection.x = caneThrowSpot.position.x - transform.position.x;
         caneThrowDirection.y = 0;
         if (hasCane)
         {
+           
             GameObject newCane = Instantiate(canePrefab, caneThrowSpot.position, Quaternion.identity);
             Rigidbody2D caneRb = newCane.GetComponent<Rigidbody2D>();
 
@@ -100,6 +105,7 @@ public class Old : Character
             }
             hasCane = false;
             caneVisual.SetActive(false);
+            currState = State.Idle;
         }
     }
 
@@ -122,6 +128,11 @@ public class Old : Character
     {
         yield return new WaitForSeconds(delay);
         Destroy(caneObject);
+    }
+
+    public override void SetList(List<GameObject> _characters)
+    {
+     
     }
 
     /*

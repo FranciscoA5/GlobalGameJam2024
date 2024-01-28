@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Chicken : Character
 {
+    [SerializeField] List<GameObject> characterSpawning;
 
     private void OnMouseDown()
     {
@@ -16,12 +17,28 @@ public class Chicken : Character
     }
     public override void Active()
     {
-        
+        anim.SetBool("LayingEgg", true);
+        foreach(GameObject character in characterSpawning)
+        {
+            if(character.tag == "Fat")
+            {
+                character.GetComponent<Character>().SwitchState(State.Active);
+            }
+        }
     }
 
     public override void Dead()
     {
-     
+        foreach (GameObject character in characterSpawning)
+        {
+            if (character.tag == "Woman")
+            {
+                character.GetComponent<Character>().SwitchState(State.Reactive);
+                break;
+            }
+        }
+        characterSpawning.Remove(this.gameObject);
+        Destroy(this.gameObject);
     }
 
     public override void Idle()
@@ -32,5 +49,10 @@ public class Chicken : Character
     public override void Reactive()
     {
 
+    }
+
+    public override void SetList(List<GameObject> _characters)
+    {
+        characterSpawning = _characters;
     }
 }

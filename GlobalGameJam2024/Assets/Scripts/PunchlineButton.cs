@@ -31,7 +31,7 @@ public class PunchlineButton : MonoBehaviour
                 Debug.Log(characterScript);
                 characterScript.SwitchState(Character.State.Active);
                 GameManager.Instance.UpdateGameState(GameState.Joke);
-                return;
+                
             }
         }
     }

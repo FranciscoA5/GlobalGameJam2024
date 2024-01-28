@@ -390,7 +390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c706b4348f5ff9541beeb3be3614f4be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screamRange: 5.76
+  screamRange: 10
   circleSegments: 30
   characterSpawning: []
 --- !u!1 &6207608293050932865

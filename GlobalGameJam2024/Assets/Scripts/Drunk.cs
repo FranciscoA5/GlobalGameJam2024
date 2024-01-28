@@ -42,6 +42,10 @@ public class Drunk : Character
 
     }
 
+    public override void SetList(List<GameObject> _characters)
+    {
+
+    }
     public void Dance()
     {
         anim.SetTrigger("DrunkDance");
